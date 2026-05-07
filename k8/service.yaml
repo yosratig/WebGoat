@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: webgoat-service
+  labels:
+    app: webgoat        # ← ajoute cette ligne
 spec:
   type: NodePort
   selector:
@@ -10,3 +12,4 @@ spec:
     - port: 8080
       targetPort: 8080
       nodePort: 30080
+      name: http        # ← ajoute cette ligne aussi
